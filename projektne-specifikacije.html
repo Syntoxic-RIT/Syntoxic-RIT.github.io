@@ -1,1 +1,430 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+ol { counter-reset: item }
+li{ display: block }
+li:before { content: counters(item, ".") ". "; counter-increment: item }
+ul {counter-reset: item;}
+ul > li:before {content: auto;}
+</style>
+</head>
+<body>
+
 <a href="https://estudij.um.si/mod/assign/view.php?id=324803">NAVODILA</a>
+<h1 id="projektna_specifikacija">Projektna specifikacija</h1>
+<hr>
+<!--kazalo vsebine-->
+<h2 id="kazalo">Kazalo vsebine</h2>
+<ol>
+    <h3><li><a href="#uvod">Uvod</a>
+        <ol>
+            <h5><li><a href="#namen_dokumenta">Namen dokumenta</a></li></h5>
+            <h5><li><a href="#ciljna_skupina_dokumenta">Ciljna skupina dokumenta</a></li></h5>
+            <h5><li><a href="#predvidena_uporaba_dokumenta">Predvidena uporaba dokumenta</a></li></h5>
+            <h5><li><a href="#obseg_zastavljenega_produkta">Obseg zastavljenega produkta</a></li></h5>
+            <h5><li><a href="#kratice">Kratice</a></li></h5>
+        </ol>
+    </li></h3>
+    <h3><li><a href="#opis_produkta">Opis Produkta</a>
+        <ol>
+            <h5><li><a href="#potrebe_uporabnika">Potrebe uporabnika</a></li></h5>
+            <h5><li><a href="#ocene_predvidevanja_in_odvisnosti_od_zunanjih_dejavnikov">Ocene, predvidevanja in odvisnosti od zunanjih dejavnikov</a></li></h5>
+        </ol>
+    </li></h3>
+    <h3><li><a href="#sistemske_specifikacije_in_funkcionalnosti">Sistemske specifikacije in funkcionalnosti</a>
+        <ol>
+            <h5><li><a href="#funkcionalne_zahteve">Funkcionalne zahteve</a></li><h5>
+            <h5><li><a href="#zahteve_za_zunanji_vmesnik">Zahteve za zunanji vmesnik</a></li></h5>
+            <h5><li><a href="#sistemske_funkcionalnosti">Sistemske funkcionalnosti</a></li></h5>
+            <h5><li><a href="#nefunkcionalne_zahteve">Nefunkcionalne zahteve</a></li></h5>
+        </ol>
+    </li></h3>
+    <h3><li><a href="#zakljucek">Zaključek</a></li></h3>
+</ol>
+<hr>
+<h2 id="uvod">1. Uvod</h2>
+<p>To poglavje je namenjeno predvsem razvijalcem produkta in vsem
+    udeleženim tekom razvoja produkta (od faze načrtovanja, do faze
+    vzdrževanja programske rešitve). Znotraj tega poglavja je opisana
+    skupina ljudi, katerim bi ta dokument koristil, kako naj bi bila
+    pravilna uporaba tega dokumenta, kakšni so cilji, želje, prednosti,
+    pogledi na končni produkt in obravnava izrazoslovja (slovar
+    kratic, tujk, žargonov, pripomočkov,...).
+</p>
+<h3 id="namen_dokumenta">1.1. Namen dokumenta</h3>
+<p>
+    Ta dokument služi predvsem kot nekakšen kratek povzetek načrtovalne faze
+    pri razvoju našega končenga produkta. Znotraj tega dokumenta je razvidno, 
+    kako smo načrtovali celoten projekt, kdo vse je vključen v njega, kaj želimo od produkta,
+    za koga je dokument pomemben, za koga izdelujemo ta produkt, kakšne 
+    specifikacije zahteva, ter kaj vse potrebujemo za njegov razvoj, 
+    zagon in vzdrževanje, od katerih dejavnikov (notranjih ali zunanjih
+    , posrednih ali neposrednih) je odvisen naš končni produkt in kakšna
+    so naša merila za postavitev tega produkta na končni trg.
+</p>
+<h3 id="ciljna_skupina_dokumenta">1.2. Ciljna skupina dokumenta</h3>
+<p>
+    Naša ekipa za razvoj je sestavljena iz 3 razvijalcev. Od tega je vodja
+    razvoja in vodja ekipe Matevž Sladič, ostala člana ekipe pa sta
+    Rok Žerdoner in Nadiia Shpanko. Poleg teh treh članov razvojen ekipe, je
+    v projekt vključen tudi izredni profesor dr. Tomaž Kosar,
+    ki predstavlja vlogo mentorja in nadrejenega za razvojno ekipo, "scrum masterja" za 
+    celoten projekt in tudi enega izmed ciljnih uporabnikov in testerjev produkta.
+    Celoten projekt sestavljajo 4 člani, ki lahko v celoti dosotopajo do tega dokumenta,
+    oziroma je priporočljivo, da ga uporabljajo tekom faz razvoja projekta.
+</p>
+<p>
+    Iz prejšnjega odstavka je razvidno, da je razvojenmu timu ta dokument
+    koristi predvsem pri razvoju projekta, določevanju potrebnih opravil,
+    časovne dobe posameznih faz razvoja, zadovoljiti potrebne standarde ter seveda testiranje.
+    Medtem ko je za mentorja predvsem namenjen odsek dokumenta, ki govori o načrtih,
+    rokih, ciljih, zahtevah in seveda načinih zadovoljevanja začrtanim merilom kakovosti.
+</p>
+<h3 id="predvidena_uporaba_dokumenta">1.3. Predvidena uporaba dokumenta</h3>
+<p>
+    Kot je že omenjeno v <a href="#namen_dokumenta">tem</a> poglavju dokumenta, ta dokument
+    služi kot pomoč pri razvoju produkta in arhiv načrtovalne faze. Ta dokument, naj uporablja 
+    vsak izmed članov zapisanih v <a href="ciljna_skupina_dokumenta">tem</a> odstavku.
+    Ta dokument je priporočljivo s strani vsakega člana v celoti prebrati pred začetkom faze razvoja, medtem ko
+    je nato pred začetkom nadaljnih faz (npr. testiranje, izpopolnjevanje produkta, izdelava uporabniškega vmesnika,...),
+    priporočljivo prebrati podrobneje tudi poglavja v katerih so zapisane podrobnosti za zgoraj naštete faze.
+</p>
+<p>
+    Pred začetkom razvoja je priporočljivo, da se vsi člani na podlagi tega dokumenta dogovorijo glede načina poteka
+    razvoja posameznih faz, uporabe primernih tehnologij za razvoj, skrb za vodenje projekta, določevanja primarnih 
+    uporabniških zgodbic in primarnih ciljev in funkcionalnosti produkta. Nato je pred začetkom vsakega "šprinta"
+    priporočljivo ponovite predhodno naštete korake, medtem ko po njihovih zaključkih pa je zaželjeno narediti 
+    pregled dela, in preveriti, če so končana opravila po standardih, ki jih večeva ta dokument. 
+    Tekom vsakega dela v razvoju je priporočljivo tudi pregledati zahteve in želje uporabnikov, ki so zapisane v 
+    <a href="">tem</a> delu dokumenta ter v primeru odkritih konfliktov jih tudi razrežiti.
+    Po koncu različnih faz razvoja je priporočljivo na podlagi tega dokumenta sestaviti končni sestanek, v katerem z 
+    uporabniki in nadrejenimi predebatirati, ali je končni produkt primeren za trženje ali ne.
+</p>
+<h3 id="obseg_zastavljenega_produkta">1.4. Obseg zastavljenega produkta</h3>
+<p>
+    Primarni cilj, ki ga želimo dosečti s tem produktom je pomoč pri izbira ali iskanju študentskih/dijaških služb
+    za vse dijake, študente ali absolvente na širšem območju Maribora in krajev v bližini njega. To pomeni, da želimo
+    spletno aplikacijo, ki bi uporabnikom omogočala enostaven pregled nad možnimi službami, jim grafično prikazovala 
+    in izpisovala podatke o vseh delih in njihovih lokacijah. Prav tako bi ta aplikacija omogočala interakcijo uporabnikov
+    z ostalimi uporabniki preko t.i. komentiranja delovnih mest in podjetji, ki bi pomagala ostalim uporabnikom pri pomembnih
+    odločitvah glede izbire pravega dela za njih. Kot dodana vrednost bi ta aplikacija vsebovala generiranje prošenj in 
+    življenjepisov za delovna mesta s pomočjo umetne inteligence. Ker večina uporabnikov naše ciljne skupine uporablja
+    kot primarno sredstvo za brskanje informacij po svetu telefon, je potrebno tudi ustvariti mobilno različico naše spletne
+    storitve, ki bi omogočala podobne funkcionalnosti, le, da bi imela kot dodano vrednost tudi sikanje s pomočjo "GPS" sistema.
+    Ena izmed zelo pomembnih ciljev tega projekta je tudi izdelava "3-D" modela mesta, kar pomeni, da je potrebno tekom razvoja 
+    tudi izdelati model mesta Maribor, ki bi natančneje uporabikom pomagal pri iskanju del, in poti do njih,, ter simulirali različne
+    scenarije zaposlitev v prihodnosti (katera delovna mesta so v porastu, glede je največje število delovnih mest,...).
+    Za administratorja je potrebno zagotoviti nemoteno avtomatizirano delovno okolje s pomočjo storitve "MS Azure", na katerem želimo
+    imeti aktiven in delujoč spletni strežnik za uporabo. Prav tako je potrebno zagotoviti, da lahko s pomočjo namizne apliakcije
+    upravlja z viri oziroma podatki, ki se bodo nahajali v podatkovni bazi "MongoDB". Za potrebe tesiranaj razvoja apliakciji, pa je 
+    prav tako potrebno tudi omogočiti neprekinjeno integracijo v okolju "GitHub", ter izdelavo primernih testov, ki se samodejno zaženejo
+    ob spremembah znotraj kode.
+</p>
+<p>
+    Poleg vseh naštetih funkcionalnosti, ki predstavljajo nekakšne osnovne cilje, ki jih je potrebmo zagotoviti tekom razvoja produkta,
+    je potrebno poskrbeti, da je končni produkt <b>uporabniku prijazen, jasen, enostaven za uporabo, pregleden, delujoč, popoln, avtomatiziran,
+    prilagodljiv glede na potrebe uporabnika in njegovo uporabo ter izdelan v dogovorjenih rokih.</b>
+</p>
+<h3 id="kratice">1.5. Kratice</h3>
+<p>Kratice, tuje besede, strokovna izrazoslovja so:</p>
+<dl>
+    <dt>Scrum master</dt>
+    <dd>Vodja ekipe, ki skrbi, da se izvaja oblika dela imenovana "scrum" v praksi.</dd>
+    <dt>Šprint</dt>
+    <dd>Časvono obdobje v katerem se izvede en cikel razvoja produkta v sistemu dela imenovanega "scrum".</dd>
+    <dt>GPS</dt>
+    <dd>(Globalni sistem pozicioniranja) je satelitski navigacijski sitem, ki se uporablja za določevanje lege na Zemlji.</dd>
+    <dt>3-D</dt>
+    <dd>Kratica, ki predstavlja izris objektov v treh dimenzijah, namesto v dveh</dd>
+    <dt>MS Azure</dt>
+    <dd>Microsoft Azure je oblačna storitev, ki omogoča uporabo virov glede na zahteve uporabnikov. Deluje na sistemu plačaj kolikor porabiš.</dd>
+    <dt>MongoDB</dt>
+    <dd>Oblačna storitev, ki omogoča gostovanje podatkovne baze MongoDB, ki je predstavnik NOSQL podatkovnih baz.</dd>
+    <dt>GitHub</dt>
+    <dd>Oblačna Git rešitev, ki omogoča verzioniranje programske kode in neprekinjeno integracijo oziroma razvoj, ter skupno urejanje programske kode.</dd>
+</dl>
+
+<h2 id="opis_produkta">2. Opis produkta</h2>
+<p>
+    To poglavje je namenjeno podrobnejšemu opisu o tem kakšen produkt sploh gradimo, zakaj bi potrebovali takšen produkt na trgu, kdo je naša ciljna skupina
+    uporabnikov in zakaj jim naš produkt, ki ga gradimo sploh koristi. To poglavje prav tako opisuje tudi kakšni so naši cilji, želje in upanja glede dokončanega
+    produkta, ter od katerih dejavnikov (tako neposrednih, kot posrednih, zunanjih ali notranjih,...) so odvisni oziroma lahko vplivajo na končni izdelek.
+</p>
+<p>
+    Naš ciljni produkt je sesatvljen iz množice podproduktov, ki skupaj tvorijo nekakšno zaključeno celoto, hkrati pa so tudi samostojni izdelki. Tekom razvoj je
+    najpomembnejšo opravilo sestaviti in zgraditi spletno aplikacijo, ki jo uporabljajo naši uporabniki. Spletna aplikacija temelji na ogrodju imenovanem "MERN",
+    kar pomeni, da za svoje delovanje uporablja jezik Javascript, in njegove knjižnice za izdelavo zaledja ("API"), kot so "Node.js", "Express.js" in "MongoDB", ter za čelni
+    del (to kar uporabnik vidi) knjižnico "React.js". Spletna storitev omogoča prikazovanje študentskih in dijaških del iz naše podatkovne baze, prav tako poleg
+    prikazovanja teksta in vsebine, ima možnost prikazovati lokacije na zemljevidu, ki imajo podprto možnost iskanja glede na trenutno lokacijo uporabnika. Kot nekakšno
+    dodano vrednost, pa ima uporabnik možnost, da mu naša spletna aplikacija omogoča generiranje prošenj za delo in življenjepis s pomočjo umetne inteligence. Spletna storitev
+    (tako zaledni, kot čelni del) tečejo na spletnem strežniku, ki se nahaja na oblačni storitvi "MS Azure", kar pomeni, da imamo javno dostopno spletno stran s pomočjo strežnika,
+    ki se nahaja n X domeni/spletnem naslovu. Za potrebe pridobivanja podatkov slrbi administrativna namizna aplikacija, ki je narejena v programskem jeziku "Kotlin", in 
+    katere namen je pridobivanje podatkov iz treh (glavnih) virov oziroma spletnih strani: "MJob", "CareerJet", "Bizi" in po potrebi še ostale ("Študenstki servis",...). Poleg seveda 
+    pridobivanja podatkov, namizna apliakcija služi tudo kot generator namišljenih podatkov v primeru, da postanejo podatki iz zgoraj naštetih spletnih strani nedosegljivi. 
+    Ustvarjen je tudi domensko specifičen jezik, čigar glavna komponenta so podjetja in lokacije del, saj je za uporabnika najpomembneje, da ve kje se nahajajo dela, ki ga zanimajo.
+    Seveda so vključene tudi druge komponente, ki pa niso toliko pomembne iz splošnega vidika ("npr." cesta, most, park, reka,...). Ta jezik služi predvsem kot orodje za zgraditev "3-D"
+    modela mesta Maribor (morda tudi okolice), ki je del spletne storitve. Ta model služi kot novo orodje za prikazovanje podatkov uporabnikom, ter za simuliranje podatkov vezanih 
+    na to tematiko. To pomeni, da omogoča prikazovanje statistike glede števila del za posamezne kategorije, področja, datum ali ostale željene specifikacije. Prav tako lahkko ta model 
+    služi kot pomoč pri odločitvah uporabnikov glede na napovedi v prihodnosti, ter pomoč pri morebitnih odločitvah glede zaposlitev in celo izbire študija (predvsem za dijake). 
+    To kar je bilo našteto zgoraj je v prvi vrsti mišljeno za izdelavo spletne strani, seveda pa, ker se zavedamo, da javečje število uporabnikov glede na našo ciljno skupino uporablja
+    mobilne naprave in tablice kot primaren vir za iskanje informacij, je cilj tudi ustvariti mobilno apliakcijo, ki po funkcionalnostih ne zaostaja za spletno stranjo. To pomeni, da vse, 
+    kar omogoča spletna stran, omogoča tudi mobilna aplikacija (lahko so določene funkcionalnosti zaradi kompleksnosti izvzete iz nje, vendar pa jedro ostaja isto).
+    Mobilna aplikacija je narejena v okolju "Android studio", kar pomeni, da je namenjena uporabnikom telefonov "Android", vendar pa je za v bodoče planirana tudi neodvisnost glede platforme.
+</p>
+<h3 id="potrebe_uporabnika">2.1. Potrebe uporabnika</h3>
+<p>
+    Naša glavna ciljna skupina uporabnikov, oziroma uporabniki, ki bi lahko uporabljali naše storitve so predvsem <b>dijaki, študenti in absolventi</b>. To pomeni, da govorimo o ljudeh tarih med 15
+    (takrat lahko legalno začnejo delati prek študentskega servisa) in okoli 30 let, saj ni veliko ljudi, ki bi redno študirali po 30. letu. Produkt je namenjen tako moškim, ženskam in ljudem
+    ostalih spolov, kot tudi univerzalen glede nacionalnosti, vendar pa zaradi tega, ker so podatki iz spletnih mest v slovenščini, je tudi končni produkt zapisan v slovenščini (ni pa omejen, 
+    samo na slovensko populacijo). Sekundarni uporabniki za nas pa predstavljajo tudi podjetja, ki zagotavljajo delovna mesta, saj želimo v prihodnosti, tudi njim posvetiti določene funkcionalnosti
+    našega končnega produkta, kot tudi seveda mentor, ki predstavlja vodjo projekta, ostali profesorji na Fakulteti računalništvo, informatiko in elektrotehniko, ter ljudem zaposlenim v industriji,
+    katerim predstavljamo naš končni produkt na javni predstavitvi.
+</p>
+<p>
+    Za naše primarne uporabnike želimo, da naš produkt ponuja olajšano izbiro in pregledno prikazovanje njim eden izmed najpomembnejših informacij, ki jih potrebujejo - Študentsko delo. Seveda,
+    če želimo to doseči, moramo najprej ugotoviti kaj je njim najpomembnejše. Če bi to zapisali v obliki uporabniškega ep, bi to lahko strnili v obliko npr. : <b>"Kot študen-ka/dijak-inja/absolvent-ka bi rad-a
+    imel-a spletno in mobilno aplikacijo, ki bi mi pregledno prikazovala študentska dela, omogočala napredno filtriranje, jih prikazovala na zemljevidu (omogočala nekakšno interaktivnost), ter mi ponujala
+    možnost uporabe te storitve kot nekakšen spletni forum na to tematiko"</b>. Iz tega uporabniškega epa, bi seveda lahko ustvarili mnogo uporabniških zgodbic (npr. Komentiranje del, prikazovanje na mapi,...),
+    nam pa kljub zelo veliki splošnosti koristi pri profiliranju naših uporabnikov. Vidimo, da je za njih najpomembneje ustvariti od platforme neodvisno aplikacijo/storitev, ki bi jim olajšala pri iskanju
+    za njih popolnega študentskih dela iz kopice mnogih del. Za uporabnike je pomembne, da jim zagotovimo kar najboljšo in najlažjo možnost za to zahtevo, ki na prvi pogled ni ravno velika, vendar pa lahko 
+    zelo oteži sam razvoj aplikacije, sj se moramo vprašati kaj točno misli uporabnik s tem, kako to razširiti v eno velik produkt, ter katere funkcionalnosti bi lahko dodatno vključili v njega. Iz zgoraj navedenega
+    lahko sklepamo, da je vse kar si uporabnik sploh želi, samo to, da pride na našo sletno storitev/aplikacijo, in le po nekaj minutah iskanja najde vse potrebne podatke o tistih delih, ki ga zanimajo, njihovih
+    specifikacijah, prednostih in slabostih, lokaciji, podatkih o podjetju, ki ponuja to delo. Poleg tega pa je za njega pomembno, da se počuti, kot da je del večje skupine ljudi, katerih glavni cilj je poiskati 
+    primerno študenstko delo za njih.
+</p>
+<p>
+    Zadnji pomembni podatek o uporabnik je tudi njihovo deljenje glede na neposredno vpletenost v projekt. Čeprav predstavljajo našo primarno skupino študentje, ti <b>niso</b> neposredno vpleteni v razvoj projekta.
+    Ti namreč predstavljajo le kočno skupino skupino ljudi, ki bodo uporabljali naš produkt, kar pomeni, da za njih preko strani naročevalca, izdelujemo ta produkt. Na drugi strani, pa je naš mentor tista oseba, ki
+    ima neposreden vpliv na razvoj našega produkta, saj predstavlja vlogo vodje projekta, naročnika projekta in mentorja (pomočnika). To pomeni, da je <b>mentor v vlogi naročnika, primarna skupina uporabnikov, pa 
+    le ciljna skupina, za katere se posredno razvija produkt.</b>
+</p>
+<p>
+
+</p>
+<h3 id="ocene_predvidevanja_in_odvisnosti_od_zunanjih_dejavnikov">2.2. Ocene, predvidevanja in odvisnosti od zunanjih dejavnikov</h3>
+<p>
+Celoten projekt temelji na kopici naših predvidevanj, ocen in različnih dejavnikov. Zato je pomembno, da tekom tega projekta predvidevamo, da je velika verjetnost, da ne bomo dokončali, ali celo sploh začeli z implementacijo
+vseh <a href="#opis_produkta">zgoraj</a> naštetih načrtovanih funkcionalnostih. Hkrati, ker imamo zelo omejen in natrpan časovni okvir, lahko predvidevamo, da bodo določene faze razvoja, kot je načrtovanje, testiranje, odprava napak
+morda malo krajše, kot bi si želeli. V naša predvidevanja je potrebno tudi vključiti, da imamo med fazami razvoja tudi večmesečni dopust, v katerem najverjetneje ne bomo ničesar razvijali na tem projektu, ali pa, če že, samo manjše 
+in malo manj pomembne funkcionalnosti, ter tudi to, da bo potrebno tekom razvoja spreminjati naše načrte in se močno prilagajati našim zmožnostim (samo trije člani v ekipi, nihče nima predhodnega znanja glede tehnologij,...). Glede 
+tehnologije pa pričakujemo, da bo potrebno tekom razvoja posodobiti veliko knjižnic, saj se ogrodje, na katerem delamo ("MERN") zelo hitro spreminja in posodablja, hkrati pa je potrebno v našem razvoju upoštevati, da <b>smo popolni 
+začetniki iz vidika tehnologij, ki jih bomo uporabljali tekom tega projekta</b>.
+</p>
+<p>
+Naši cilji temeljijo tako na predvidevanjih, kot tudi na upoštevanju odvisnosti. V projektu imamo tako neposredne, kot tudi posredne odvisnosti. Neposredne odvisnosti so predvsem vezane na okolja v katerih ravijamo produkt, razvoj 
+vpliv implementacij določenih funkcionalnostih na ostale, ki izvirajo iz njega in nalog pri posameznih predmetih v okviru katerih razvijamo določene smeri našega produkta. To pomeni, da je odvisno katere funkcionalnosti razvijemo od ogrodji,
+ki jih uporabimo, saj lahko v našem primeru uporabimo "API" tako za mobilno, kot spletno in namizno aplikacijo, kar nam prihrani mnogo časa in virov, po drugi strani pa nam začetni čas priučenja močno naraste, kar nehativno vpliva na 
+impkementacijo določenih funkcionalnosti. Glede vpliva enega dela projekta na druge, je tu predvsem potrebno izpostaviti, da ustvarjanje domensko specifičnega jezika neposredno vpliva na izdelavo "3-D" modela mesta (več kar nam jezik omogoča,
+lažje je ustvariti nato modele), razvoj "API-ja" nam neposredno vpliva na razvoj tako, čelnega dela spletne strani, mobilne aplikacije in namizne aplikacije (če neke funkcionalnosti ni podprte s strani "API-ja", potem jih ne moremo 
+implementirati na ostalih delih aplikacije) ter uporaba specifičnega strežnika vpliva na zmogljivost in odzivnost ter sočasnost spletnih storitev (če imamo počasen strenik, ni pomembno koliko imamo aplikaicjo optimizirano, saj
+bomo slej kot prej prišli do točke, ko nam bo spletna stran začela počasi delovati). Na drugi strani, pa imamo posredne dejavnike, ti so lahko čas (saj v primeru, da nam začenja primanjkovati časa, potrebujemo prilagoditi naš končni produkt),
+hitrost razvoja in neenakost med posamezniki (vsak od nas malo drugače razvija kodo, kar pa je seveda težko nato vključiti v sama predvidevanja), odpravljanje napak (tudi to je prav tako nemogoče vnaprej predvideti), limiti glede našega znanja
+(v času razvoja je enostavno napisati kaj vse želimo, vendar pa je druga zgodba to implementirati), ostale obveznosti posameznikov, bolezni, izpiti, ... Vse ti dejavniki tako vplivajo na končni produkt neposredno, ali pa posredno in ravno zaradi 
+množice vseh teh dejavnikov, je nemogoče natančno predvideti naše cilje
+</p>
+<p>
+    Kljub temu, da jih je nemogoče predvideti, pa lahko vseeno si postavimo določene cilje. Za nas najpombnejši cilj je ustvariti dokončan izdelek, ki bi zajel vse osnovne zahteve, bil uporabniku dokaj prijazen, estetsko primeren in 
+    nam pomgala pri učenju novih tehnologij, izkušenj in spoznanj, ki jih tekom običajnega študija težko pridobiš.
+</p>
+<h2 id="sistemske_specifikacije_in_funkcionalnosti">3. Sistemske specifikacije in funkcionalnosti</h2>
+<p>
+To poglavje je najpomembnejši del dokuementa, saj so v njem zapisane potrebe, ki jih je potrebno zadovoljiti tekom teka projekta. Potrebe lahko delimo na 4 velike skupine potreb, ki so: Funkcionalnosti produkta, 
+potrebe po zunanjih vmesnikih (različni vmesniki, za različne potrebe), sistemske specifikacije in nefunkcionalne specifikacije (npr. performanca, varnost,...). Kot je vidno se tukaj nahaja zelo velik spekter nalog in potreb, ki jih je potrebno
+zadovoljiti, da lahko naš produkt podamo na trg in uporabnikom ter naročniku. Znotraj nadaljnih podpoglavji je podrobneje opisana vsaka izmed naštetih skupin zahtev.
+</p>
+<h3 id="funkcionalne_zahteve">3.1. Funkcionalne zahteve</h3>
+<p>
+Funkcionalne zahteve so najpomembnejše vrste zahtev, ki jim moramo nameniti največ pozornosti in časa pri načrtovanju. V to kategoriji spadajo predvsem funkcionalnosti, ki jih bomo implementirali tekom razvojne faze. Za naše potrebe in jasnost pri 
+definicijih le teh so v naslednjih odstavkih jasno podane funkcionalnosti za vsakega izmed predmetov (podproduktov) v našem projektu.
+</p>
+<p>Za potrebe spletne aplikacije razdelimo naše funkcionalnosti na 2 dela: Čelni in zaledni del. Ker je čelni del neposredno vezan na zaledni del bomo najprej definirali potrebe za njih v obliki kratkih opisov. Za zaledni del so zahteve sledeče:
+    <ol>
+        <li>Definiranje vseh modelov, ki sovpadajo z modeli v podatkovni bazi,</li>
+        <li>Definiranje modelov v podatkovni bazi,</li>
+        <li>Ustvarjanje "MVC" arhitekture,</li>
+        <li>Povezava na podatkovno bazo,</li>
+        <li>Omogočiti uporabo "Geostation" poizvedb - omogočiti iskanje del glede na trenutno lokacijo in oddaljenost,</li>
+        <li>Omogočiti filtriranje del glede na mesto, ime podjetja, ime dela, kategorijo dela, posameznih potreb in specifikacij, ter po lokaciji,</li>
+        <li>Ustvarjanje enostavnega administrativnega uporabniškega vmesnika v "hbs" za potrebe ročnih vnosov podatkov,</li>
+        <li>Povezava na "OpenStreetMap" "Api", ki bi nam pridobil potrebne koordinate za izris lokacij,</li>
+        <li>Sanacija in validacija vnosnih polji pri registraciji in prijavi uporabnikov (geslo mora vsebovati vsaj eno veliko, malo črko, številko, poseben znak in dolgo vsaj 8 znakov, elektronski naslov in uporabniško ime morata biti unikatna, zakodiranje
+            gesel uporabnika v bazi, nobeno izmed pomembnih polji ne sme biti prazno,...),</li>
+        <li>Validacija pri pošiljanju podatkov s pomočjo "JWT" žetonov.</li>
+    </ol>
+Za potrebe čelnega dela pa potrebujemo sledeče zahteve:
+<ol>
+    <li>Obrazec za registracijo, ki vsebuje polje za ime, priimek, elektronski naslov, uporabniško ime, geslo (vse obvezne), telefonska številka, datum rojstva, spol in avatar (neobvezno),</li>
+    <li>Obrazec za prijavo, ki vsebuje polje za uporabniško ime in geslo,</li>
+    <li>Skrb za pravilen izpis napak, ki bi se lahko pojavile tekom registraicije ali prijave (vse kar "API" pošlje kot napako, je potrebno to tudi uporabniku pravilno izpisati),</li>
+    <li>Ustvarjanje glave na spletni strani, ki vsebuje prilagodljivo navigacijsko vrstico za navigiranje po straneh,</li>
+    <li>Implementacija polja za hitro iskanje podatkov o delih, ki se nahaja v glavi,</li>
+    <li>Povezava na zaledni del spletne storitve,</li>
+    <li>Prikazovanje študenstkih del v obliki kartic, na katerih se nahaja naslov, ime podjetja, kategorija dela, podroben opis in datum objave,</li>
+    <li>Implementacija gumba "več", ki uporabnika iz kartice nato preusmeri na podrobno stran za to specifično delo,</li>
+    <li>Stran, ki izpisuje vse podatke o določenih delih, ki se nahajajo v podatkovni bazi,</li>
+    <li>Gumb za prikazovanje filtrov,</li>
+    <li>Vnosna polja, "radio" gumbi, gumbi z večimi izbirami za filtriranje podatkov o delih,</li>
+    <li>Pridobivanje trenutne lokacije uporabnika za potrebe iskanja glede na oddaljenost,</li>
+    <li>Izbrati primerno stilsko predlogo za spletno stran, ki naj ima minimalističen, a pregleden izgled,</li>
+    <li>Stran za prikazovanje del na interaktivnem zemljevidu,</li>
+    <li>Interaktivni zemljevid, ki statično prikazuje lokacije del, in ima vgrajeno filtriranje podatkov,</li>
+    <li>Gumb na vsaki izmed pikic na zemljevidu, ki predstavlja eno delo, za preusmeritev na podroben opis,</li>
+    <li>Potrebno je narediti, da lahko samo prijavljeni uporabniki dostopajo do zemeljevida in generatorja prošenj za delo,</li>
+    <li>V primeru neprijavljenega uporabnika, ki želi dostopati do zemljevida, ga je potrebno preusmeriti na stran za prijavo,</li>
+    <li>Stran, ki vsebuje podrobne podatke o uporabnikih,</li>
+    <li>Implementacija možnosti komentiranja posameznih del za prijavljene uporabnike,</li>
+    <li>Implementacija generiranja prošenj s pomočjo umetne inteligence na podlagi že vnaprej pripravljenih iztočnic za prijavljene uporabnike,</li>
+    <li>Noga spletne strani, ki vsebuje vse pravne podatke glede pravic,</li>
+    <li>Stran za izpis podatkov o kontaktu našega podjetja,</li>
+    <li>Možnost primerjanja dveh del med sabo,</li>
+    <li>Prilagodljivost vsebine glede na različne velikosti zaslonov.</li>
+</ol>
+</p>
+<p>
+    Pri amdinistrativni namizni aplikacije, ki je zapisana v jeziku "Kotlin" in ustvarjena v ogrodju "Jetpack Compose" so zahteve sledeče:
+    <ol>
+        <li>Uporabniški vmesnik, ki je sestavljen iz 3 strani - stran z deli in stran z generatorjem in stran za spreminjanje podatkov o delih,</li>
+        <li>Definiranje modelov, ki sovpadajo s podatki na spletnih mestih iz katerim pridobivamo le te,</li>
+        <li>Ustvarjanje zahtevka, ki pridobi podatke iz "Mjob" "API-ja" in jih pretvori v objekte,</li>
+        <li>S pomočjo knjižnice "Scrape.it" pridobiti podatke iz "CareerJet-a" in jih pretvoriti v objekte,</li>
+        <li>Na podlagi imena podjetja pridobljenenga iz podatkov na "MJob-u" in knjižnice "Scape.it", je potrebno pridobiti podatke iz "Bizi.si" in jih shraniti v obliki objektov,</li>
+        <li>Na podlagi imena lokacij pridobljenenga iz podatkov na "MJob-u" in knjižnice "Scape.it", je potrebno pridobiti koordinate iz spletnega mesta "OpenStreetMap",</li>
+        <li>Ustvarjanje glave znotraj namizne aplikacije, ki omogoča navigiranje po straneh,</li>
+        <li>Ustvarjanje noge znotraj namizne aplikaicje, ki prikazuje podatke o trenutno obiskani strani,</li>
+        <li>Omogočanje izbire iz katerih "scrapper-jev" se naj pridobijo trenutni podatki o delih (na voljo štiri izbire),</li>
+        <li>Prikazovanje pridobljenih del v obliki elementa "LazyColumn", pri katerem se za vsak pridobljeno delo izpiše njegovo ime, ime podjetja, gumb za izbris iz seznama ter gumb za uredi podatke o njem,</li>
+        <li>Gumb, ki izbriše izbrano delo iz seznama,</li>
+        <li>Gumb, ki te preusmeri na stran za spreminjanje podatkov za specifično delo,</li>
+        <li>Stran za spreminjanje podatkov, ki katere vnosna polja sovpadajo z vsemi podatki, ki so definirani v modelu del, (lahko so navadno tekstovno polje, radio gumbi, ali drsni meniji),</li>
+        <li>Gumb na strani za spreminjanje podatkov, ki potrdi in posodobi podatke na podlagi vnosnih polj,</li>
+        <li>Stran za generiranje naključnih podatkov, ki vsebuje vnosna polja za številske podatke in datume (omogoča generiranje do 500 del naenkrat),</li>
+        <li>Gumb potrdi na strani za generiranje podatkov, ki iz množice dvajsetih izbir za vsak podatek, naključno izbere po enega za vsako delo,</li>
+        <li>Stran na kterem se izpišejo podatki o uporabniku aplikacije,</li>
+        <li>Stran za prijavo uporabnika, ki zahteva uporabniško ime ter geslo,</li>
+        <li>Opozorilna okna, ki se pojaviju takoj za vsakim gumbom in opozorijo uporabnika pred nadaljno akcijo, ki jo bo aplikacija izvedla.</li>
+    </ol>
+</p>
+<p>
+    Za potrebe izdelave domensko specifilnega programskega jezika potrebujemo zadovoljiti naslednjim zahtevam:
+    <ol>
+        <li>Ustvarjanje "BNF" notacije na podlagi gramatike, ki jo želimo napisati,</li>
+        <li>Ustvarjanje vsaj 10 testnih primerov uporabe naše gramatike, ki naj zajamejo čimvečje število možnosti uporabe ter robnih pogojev,</li>
+        <li>Pisanje leksikalnega analizatorja v programskem jeziku "Kotlin", ki prepozna rezervirane besede, kot so if, for, var, else,... , imena objektov, ki jih lahko uporabimo kot so: street, city, junction, park, ... , poimenovanje spremenljivk (lahko poljubna črka, številka ali znak: "_") in 
+        vnos koordinat, likov (množica koordinat, ki so lahko poligoni, kvadrati, elipse, krogi, črte, krivulje,...) ter znaki za aritmetične in logične izraze,</li>
+        <li>Računanje first in follow za vsak neterminalni atribut v gramatiki,</li>
+        <li>Na podlagi first ter follow in "BNF" notacije je potrebno zapisati rekurzivni razpoznavalnik, ter se prepričati, če je gramatika res "LL1",</li>
+        <li>Zapis sintaktičnega drevesa in pisanje semantičnega evaluatorja, ki pretvori naš jezik v "JSON" zapis, ki ga prepozna spletno mesto "GeoJSON",</li>
+        <li>Podpiranje možnosti izrisa ulic, cest, križišč, krožišč, parkov, rek, jezer, mostov, zgradb in parkirišč,</li>
+        <li>Podpiranje pogojnih (if/else) stavkov,</li>
+        <li>Podpiranje zanke for,</li>
+        <li>podpiranje uporabe dinamičnih spremenljivk z rezervirano besedo var,</li>
+        <li>Podpiranje uporabe zapisa množice točk v obliki nizov točk,</li>
+        <li>Olepševanje izpisa končnega "JSON" zapisa.</li>
+    </ol>
+</p>
+<p>
+    Za potrebe predmeta sistemska administracija, pa so zahteve sledeče:
+    <ol>
+        <li>Prijava vodje v okolje "MS Azure",</li>
+        <li>Ustvarjanje brezplačnega strežnika z minimalnimi specifkacijami v okolju "MS Azure",</li>
+        <li>Omogočanje oddaljene prijave na spletni strežnik,</li>
+        <li>Omogočanje "Port forward-inga" znotraj strežnika,</li>
+        <li>Povezava strežnika na "GitHub" repozitorij, kjer se nahaja koda spletnega strežnika,</li>
+        <li>Dodajanje administrativnih uporabnikov,</li>
+        <li>Uporaba "DcokerHub" okoja za shranjevanje in zagon zabojnikov in slik naše spletne strani,</li>
+        <li>Pisanje "Docker" datoteke, ki pretvori kodo spletne strani v sliko, ki jo lahko poganja in prikazuje "DockerHub",</li>
+        <li>Avtomatizacija spreminjanja izvorne kode v slike v obliki neprekinjene integracije in "GitHub Workflows",</li>
+        <li>Skrb za varnost podatkov, ki služijo za avtentikacijo med "GitHub-om" in "DockerHub-om" v obliki "GitHub secrets",</li>
+        <li>Ustvarjanje dodatnega "API-ja" za potrebe pošlušanja webhook-a,</li>
+        <li>Avtomatizacija posodobitev novih slik ter izbris starih iz spletnega strežnika s pomočjo bash skripte,</li>
+        <li>Pisanje "Unit" testov za testiranje delovanja spletne aplikacije.</li>
+    </ol>
+</p>
+<h3 id="zahteve_za_zunanji_vmesnik">3.2. Zahteve za zunanji vmesnik</h3>
+<p>
+Ta skupina zahtev se navezuje na zahteve, ki nastanejo pri združevanju večih delov produkta v končen produkt, in opisuje, kako naj produkt nudi interakcijo in povezljivost z uporabniki, strojno opremo, ostalo programsko opremo, komunikacijo,...
+Za potrebe našega projekta potrebujemo tudi nekaj izmed teh vrst zahtev, saj potrebujemo ustvariti vsaj uporabniške vmesnike, skrbeti, da spletna stran tekoče deluje na strežnikih, poskrbeti da pravilno pridobivamo podatke iz spletnih virov,... Te zahteve so:
+<ul>
+    <li>Navigacijska vrsticaa za navigiranje po straneh spletne strani in namizne aplikacije,</li>
+    <li>Vnosna polja, ki omogočajo vnos in validacijo vnosov, ki jih poda uporabnik (spletna stran, namizna aplikacija),</li>
+    <li>Komunikacija s spletnimi stranmi: MJob, CareerJet, Bizi.si in OpenStreetMap za namene pridobivanja podatkov,</li>
+    <li>Komunikacija med podatkovno bazo, spletno stranjo in namizno aplikacijo za namene izmenjave podatkov,</li>
+    <li>Komunikacija med zalednim in čelnim delom spletne aplikacije preko "JSON" objektov,</li>
+    <li>Komunikacija med spletno aplikacijo in "API-jem" za "ChatGPT" za namene generiranaj prošenj,</li>
+    <li>Komunikacija med strežnikom in "GitHub workflows" preko webhook-ov za namene posodabljanja slik na strežniku,</li>
+    <li>Komunikacija med "GitHub workflows" in "DockerHub-om", za namene posodabljanja slik na "DOckerHub-u",</li>
+    <li>Komunikacija med rezultatom specifično domenskega jezika in stranjo "GeoLocation" za namene prikazovanja objektov na spletnem mestu,</li>
+    <li>Interakcija uporabnika s podatko o delih na spletni strani v obliki filtriranja,</li>
+    <li>Interakcija uporabnika s podatko o delih na spletni strani v obliki interaktivnega prikaza del na zemljevidu,</li>
+    <li>Interakcija med uporabnika spletne apliakcije s podprto možnostjo objavljanja komentarjev pri posameznih delih,</li>
+    <li>Intearkcija uporabnika s podatki o delih v namizni aplikaciji (brisanje, spreminjanje in generiranje podatkov),</li>
+    <li>Komunikacija med našim podjetjem in uporabniki preko kontaktnih podatkov, ki so na voljo na spletni aplikaciji,</li>
+    <li>Prilagodljivost vsebine spletne aplikacije in namizne aplikacije za uporabnike različnih velikosti naprav (računalnik, tablica, mobilni telefon).</li>
+</ul>
+</p>
+<h3 id="sistemske_funkcionalnosti">3.3. Sistemske funkcionalnosti</h3>
+<p>
+Naslednjo skupino zahtev sestavljajo tiste funkcionalnosti, ki jih sistem potrebuje, da lahko spčoh začne opravljati svojo nalogo. Za naše potrebe to poemni, da potrebujemo podati vse potrebe, ki jih naš produkt že v osnovi potrebuje, brez da bi implementirali funkcionalnosti, ki jih želimo.
+Te funkcionalnosti so torej:
+<ul>
+    <li>Postavitev strežnika v okolju "MS Azure" - pomembno, saj gosti našo spletno aplikacijo,</li>
+    <li>Prijava v oblačno storitev "MongoDB Atlas"  - pomembno, saj gosti našo podatkovno bazo in posledično tudi vse naše podatke,</li>
+    <li>Prijava v oblačno storitev "GitHub" - pomembno, saj skrbi za verzionaranje naše kode in omogoča neprekinjeno integracijo, ki nam omogoča avtomatiziranje administracijskih opravil in testiranje aplikacij,</li>
+    <li>Prijava v oblačno storitev "Docker" - pomembno, saj ustvari slike in zabojnkie naše spletne strani, ki jih nato lahko naložimo na strežnik in nam olajšajo administracijo glede prikaza spletne strani na strežniku,</li>
+    <li>Nalaganje okolja Node.js, skupaj z ostalimi knjižnicami v "MERN" skladu - pomembno, saj predstavlja nabor tehnologij, v katerih razvijamo našo spletno storitev,</li>
+    <li>Namestitev okolja "IntelliJ" - pomembno, saj nam omogoča razvoj namiznih aplikacij s pomočjo programskega jezika "Kotlin" in knjižnice za ustvarjanje dinamičnih spletnih vmesnikov imenova "Jetpack Compose",</li>
+    <li>Ustvarjanje "API-ja" za webhook, ki vsebuje skripto za namestitev slik na strežnik - pomembno, saj z njim poslušamo zahteve na strežniku, ki izvedejo skripto za zagon in posodobitev slik spletne strani,</li>
+    <li>Pisanje gramatike v obliki "BNF" notacije - pomembno, saj služi kot osnova za nadaljne evaluatorje in analizatorje</li>
+    <li>vzpostavitev povezave med spletnimi naslovi za pridobivanje podatkov in namizno aplikacijo preko knjižnice "scrape.it" - pomembno, saj potrebujemo od nekod pridobiti realne podatke o delih,</li>
+    <li>Povezava med zalednim in čelnim delom spletne aplikacije - pomembno, saj potrebujeta čelni in zaledni del med sabo komunicirati,</li>
+    <li>Povezava namizne aplikacije in spletne strani s podatkovno bazo - pomembno, saj potrebujemo pridobivati in shranjevati podatke,</li>
+    <li>Namestitev knjižnice OpenStreetMap - pomembno, saj z njeno pomočjo prikazujemo podatke na zemljevidu,</li>
+    <li>Povezava na "API" od "ChatGPT-ja" - pomembno, saj potrebujemo od nekod pridobivati zgenerirane prošnje za uporabnike,</li>
+    <li>Vzpostavitev repozitorija na "GitHub-u", kjer je potrebno ustvariti tako imenovan "GitHub pages", v katerem se nahaj vsa dokuemntacija glede projekta,</li>
+    <li>Vzpostavitev in prijava v okolje oziroma oblačno storitev "Jira" - pomembno, saj preko nje izvajamo agilni pristop imenovan "SCRUM".</li>
+</ul>
+</p>
+<h3 id="nefunkcionalne_zahteve">3.4. Nefunkcionalne zahteve</h3>
+<p>
+    Pod to zadnjo vrsto zahtev spadajo vse tiste zahteve, ki niso v prvi vrsti nujne za končen produkt (tudi brez njih lahko deluje produkt brezhibno), vendar pa, če jim posvetimo čas in jih vključimo oziroma upoštevamo tekom razvoja močno izboljšajo končni produkt.
+    Med te zahteve spadajo tako varnost, performanca, velikost hrambe podatkov, kompatibilnost med strojno in programsko opremo, zanesljivost, prenosljivost, razširljivost, avtomatiziranost, kot tudi kako enostavna je za uporabo in za vzdrževanje.
+    Za potrebe našega projekta lahko vključimo kar nekaj teh dodatnih zahtev, kot so:
+    <ul>
+        <li>Filtriranje podatkov na spletni strani se naj izvede znotraj 3 sekund (seveda je tukaj potrebno upoštevati specifikacije strežnika, ki je zelo osnoven, kar se tiče strojne opreme),</li>
+        <li>Avtomatično naj se izvede namestitev najnovejše različice spletne strani na strežniku,</li>
+        <li>Testi se naj avtomatično izvedejo ob vsaki spremembi znotraj kode inposkrbijo, da je aplikacija delujoča in kompatibilna z ostalimi deli kode,</li>
+        <li>Sanacija in validacija vseh vnosnih polji tako za spletno aplikacijo, kot tudi za namizno aplikacijo,</li>
+        <li>Skriti podatki za povezavo na podatkovno bazo,</li>
+        <li>Varen prenos podatkov med čelnim in zalednim delom spletne aplikacije,</li>
+        <li>Onemogočan dostop do dodatnih funkcionalnostih (generiranje, zemljevid in komentiranje) na spletni strani, za neprijavljene uporabnike,</li>
+        <li>Avtorizacija uporabnikov na spletni strani za dostop do zemljevida, generiranja in komentiranja,</li>
+        <li>Avtorizacija uporabnika za dostop do namizne aplikacije,</li>
+        <li>Prilagodljivost uporabniških vmesnikov glede na različne velikosti zaslonov,</li>
+        <li>Ustvarjanje "API-ja" na modelu "MVC", saj olajša možnost razširitve in nadgradnje funkcionalnostih,</li>
+        <li>Vsaj 500MB prostora za shranjevanje podatkov znotraj podatkovne baze,</li>
+        <li>Uporaba opozorilnih oken pri pomembnejših uporabnikovih dogodkih (še posebej pri namizni aplikaciji, saj lahko določene funkcionalnosti se izvajajo dlje časa),</li>
+        <li>Dostop do spletne strani mora biti vedno odprt,</li>
+        <li>Filtrirni parametri pri spletni aplikaciji morajo imeti možnost ponastavitve tudi ko uporabnik ne osveži strani,</li>
+        <li>Gesla morajo biti zakodirana - varno shranjena v podatkovni bazi,</li>
+        <li>Vsakih nekaj mesecev je potrebno temeljito posodobiti vsa oklja in knjižnice, ki so bile/bodo uporabljene,</li>
+        <li>Dostop do strežnika naj ima jo samo za to pooblaščene osebe (samo člani ekipe),</li>
+        <li>Stran za generiranje podatkov naj ima že vnaprej pripravljene možnosti med katerimi lahko nato uporabnik izbira kaj želi,</li>
+        <li>Samodejno pridobivanje trenutne lokacije uporabnikov spletne aplikacije.</li>
+    </ul>
+</p>
+<h2 id="zakljucek">4. Zaključek</h2>
+<p>
+    Zgoraj naštete potrebe in specifikacije so ključnega pomena za hitrejšo, enostavnejše in novemu razvijalcu prijaznejši razvoj našega ciljnega produkta. Predstavljajo tako arhiv načrta, kot tudi cilje, pričakovanja in želje, ki jih imamo glede tega projekta.
+    Pomembno je, da v primeru dilem, konfliktov, pozabljivosti, dvoumnosti, nesoglasij ponovno podrobno preučimo ta dokuement, sja predstalvja iztočnico za ves nadaljni razvoj produkta ter kdaj je primerno, oziroma zadovoljivo, da zaključimo s tem projektom.
+    V dokumentu ni nikjer sicer zapisanih posebnih rokov, porabe časa in porabljenih virov, saj kot je že bilo omenjeno je to zelo teđko napovedati. Vsekakor pa lahko podamo okvirni oziroma najzadnejši rok, do katerega mora biti ta projekt zaključen in vsaj delujoč,
+    če ne kar zaključen. <b>To je sredina januarja</b>, saj se takrat zaključi semester, ter se začenjajo priprave na javno predstavitev tega produkta. Kar pa se tiče ostalih podrobnosti, pa so bile že zapisane v enem izmed mnogih poglavji znotraj tega dokumenta. 
+    Sedaj je potrebno samo še slediti tem navodilom, ki so napisane poebej za uporabo članov razvojne ekipe.
+</p>
+<a href="#projektna_specifikacija">nazaj na vrh</a>
+<hr>
+<blockquote>ekipa: Syntoxic skupaj z mentorjem: dr. Tomažem Kosarjem</blockquote>
+<blockquote>ime projekta: JobHive</blockquote>
+<blockquote>Leto 2023/24</blockquote>
+</body>
