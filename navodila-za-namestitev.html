@@ -57,6 +57,7 @@
     <p>Po namestitvi boste morali klonirati repozitorij <a href="https://github.com/Syntoxic-RIT/DesktopApp">https://github.com/Syntoxic-RIT/DesktopApp</a>.</p>
     <p>To lahko storite na dva načina: s programom Intelij Idea ali s pomočjo git. Podrobna navodila za namestitev repozitorija so na voljo na: <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository?platform=windows">https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository?platform=windows</a>.</p>
     <p>Seznanite se z aplikacijo.</p>
+    <p><strong>POZOR:</strong> Čez nekaj časa se lahko zgodi, da dependencies ne bodo delovale, ker so zastarele. V tem primeru projekta ne boste mogli zgraditi. Če želite rešiti to težavo, pojdite v datoteko build-gradle in jih posodobite na najnovejšo različico.</p>
 
     <h2 id="installing-web-application">4. Namestitev spletne aplikacije in vsega, kar potrebujete za njeno delovanje</h2>
     <p>Za namestitev spletne aplikacije potrebujete aplikacijo, ki podpira node.js in react. Priporočamo namestitev VS Code. Prenesete jo lahko s spletne strani<a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a>. Prenesti boste morali tudi <a href="https://nodejs.org/en">https://nodejs.org/en</a>. Nato v ukazno vrstico zapišite naslednje ukaze:</p>
@@ -67,11 +68,13 @@ npm install nodemon</code></pre>
     <p>To lahko storite na dva načina: s programom VS code ali s pomočjo git. Podrobna navodila za namestitev repozitorija so na voljo na: <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository?platform=windows">https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository?platform=windows</a>. The latest version of the application is on the development branch.</p>
     <p>Da bo aplikacija delovala, morate namestiti zbirko podatkov, za kar sledite točki 1.</p>
     <p>Če želite zagnati aplikacijo, morate z desno tipko miške klikniti na mapo backend, izbrati možnost Odpri v integriranem terminalu in uporabiti ukaz <code>npm start</code>. Nato ponovite korake za mapo frontend. Uporabite lahko tudi <code>npm run dev</code> ukaz</p>
+    <p>Zaradi izdaje novih različic se lahko zgodi, da je treba kodo posodobiti. </p>
     <p>Več informacij o podobnih aplikacijah: <a href="https://www.freecodecamp.org/news/how-to-create-a-react-app-with-a-node-backend-the-complete-guide/">https://www.freecodecamp.org/news/how-to-create-a-react-app-with-a-node-backend-the-complete-guide/</a>.</p>
-    
+
+
     <h2 id="placing-site-on-server">5. Namestitev spletnega mesta na strežnik. Delo z Azure</h2>
     <p>Na voljo sta dve možnosti: spletno mesto gostite sami ali do njega dostopate prek ssh. Najprej se morate registrirati na <a href="https://azure.microsoft.com">https://azure.microsoft.com</a>.</p>
     <p>YIzberete lahko način plačila in konfiguracijo virtualne naprave. Za študente je na voljo brezplačno poskusno obdobje. Za povezavo prek ssh vas mora nekdo dodati kot uporabnika in dodati geslo. Nato se lahko povežete na naslednji način:</p>
-    <p>Odprite Windows Powershell. Vnesite ukaz <code>ssh Username@20.160.29.130</code>, nato vnesite geslo. Spletna stran bo na voljo na naslovu <a href="http://20.160.29.130:localhost">20.160.29.130:localhost</a>.</p>
+    <p>Odprite Windows Powershell. Vnesite ukaz <code>ssh Username@20.160.29.130</code>, nato vnesite geslo. Spletna stran bo na voljo na naslovu <a href="http://20.160.29.130:3000/">http://20.160.29.130:3000/</a>.</p>
 </body>
 </html>
