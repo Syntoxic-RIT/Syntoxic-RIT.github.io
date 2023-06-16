@@ -31,7 +31,8 @@
     </style>
 </head>
 <body>
-    <h1>Vsebina:</h1>
+    <h1>Navodila za namestitev:</h1>
+    <h2>Vsebina:</h2>
     <ul>
         <li><a href="#mongodb-database">1. Namestitev podatkovne baze mongodb</a></li>
         <li><a href="#installing-git">2. Namestitev git</a></li>
@@ -41,7 +42,7 @@
     </ul>
     
     <h2 id="mongodb-database">1. Namestitev podatkovne baze mongodb</h2>
-    <p>Za začetek dela potrebujemo zbirko podatkov. Obrniti se morate na <a href="https://www.mongodb.com/">https://www.mongodb.com/</a> in se prijavite. Uporabite lahko spletno mesto ali namestite aplikacijo. Nato lahko ustvarite nov Clster ali se povežete z obstoječem. V drugem primeru vas mora lastnik zbirke podatkov dodati kot uporabnika.</p>
+    <p>Za začetek dela potrebujemo zbirko podatkov. Obrniti se morate na <a href="https://www.mongodb.com/">https://www.mongodb.com/</a> in se prijavite. Uporabite lahko spletno mesto ali namestite aplikacijo. Nato lahko ustvarite nov Cluster ali se povežete z obstoječem. V drugem primeru vas mora lastnik zbirke podatkov dodati kot uporabnika.</p>
     <p><strong>POZOR:</strong> Podatkovna baza je vezana na vaš IP. Če jo želite odpreti na novem mestu, boste morali iti na spletno stran mongo.db in dodati nov naslov ip. Več podrobnosti si lahko preberete na: <a href="https://www.mongodb.com/docs/atlas/">https://www.mongodb.com/docs/atlas/</a>.</p>
     
     <h2 id="installing-git">2. Namestitev  git</h2>
@@ -74,7 +75,9 @@ npm install nodemon</code></pre>
 
     <h2 id="placing-site-on-server">5. Namestitev spletnega mesta na strežnik. Delo z Azure</h2>
     <p>Na voljo sta dve možnosti: spletno mesto gostite sami ali do njega dostopate prek ssh. Najprej se morate registrirati na <a href="https://azure.microsoft.com">https://azure.microsoft.com</a>.</p>
-    <p>YIzberete lahko način plačila in konfiguracijo virtualne naprave. Za študente je na voljo brezplačno poskusno obdobje. Za povezavo prek ssh vas mora nekdo dodati kot uporabnika in dodati geslo. Nato se lahko povežete na naslednji način:</p>
+    <p>Izberete lahko način plačila in konfiguracijo virtualne naprave. Za študente je na voljo brezplačno poskusno obdobje. Za povezavo prek ssh vas mora nekdo dodati kot uporabnika in dodati geslo. Nato se lahko povežete na naslednji način:</p>
     <p>Odprite Windows Powershell. Vnesite ukaz <code>ssh Username@20.160.29.130</code>, nato vnesite geslo. Spletna stran bo na voljo na naslovu <a href="http://20.160.29.130:3000/">http://20.160.29.130:3000/</a>.</p>
+    <p>Če želite preizkusiti vse funkcije na spletni strani, morate v brskalniku Chrome vstopiti na stran z naslovom chrome://flags/#unsafely-treat-insecure-origin-as-secure. Nato v prazno polje vnesite naslov url od spletne strani na azure http://20.160.29.130:3000/</p>
+    <p><a href="#top">Na začetek</a></p>
 </body>
 </html>
