@@ -2,24 +2,285 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Syntoxic - Dokumentacija</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <style>
+            .custom-content {
+                padding: 20px;
+            }
+            .custom-footer {
+                background-color: #000;
+                color: #fff;
+                padding: 10px 0;
+                text-align: center;
+                font-size: 14px;
+            }
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.5;
+                text-align: justify;
+            }
+            h1 {
+                font-size: 26px;
+                font-weight: bold;
+            }
+            h2 {
+                font-size: 24px;
+                font-weight: bold;
+            }
+            h3 {
+                font-size: 22px;
+                font-weight: bold;
+            }
+            h4 {
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            a {
+                color: #0366d6;
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            strong {
+                font-weight: bold;
+            }
+            .back-to-top {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                border-radius: 50%;
+                background-color: #333;
+                color: #fff;
+                cursor: pointer;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.3s, visibility 0.3s;
+            }
+            .back-to-top:hover {
+                background-color: #555;
+            }
+            .back-to-top.show {
+                opacity: 1;
+                visibility: visible;
+            }
+            img {
+                width: 60%;
+            }
+        </style>
     </head>
-    <body>
-        <a href="https://estudij.um.si/mod/assign/view.php?id=324803">NAVODILA</a>
-        <h1>Ključni primeri upoprabe naših izdelkov</h1>
-        <ul>
-            <li><a href="#webApp">Primeri uporabe spletne aplikacije</a></li>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/index.html">JobHive</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/index.html"><i class="fas fa-home"></i> Domov</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="projektne-specifikacije.html"><i class="fas fa-file-alt"></i> Projektne specifikacije</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="navodila-za-namestitev.html"><i class="fas fa-cogs"></i> Navodila za namestitev in prijavo v sistem</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="kljucni-primeri-uporabe.html"><i class="fas fa-lightbulb"></i> Klučni primeri uporabe</a>
+          </li>
         </ul>
-        <div id="webApp">
-            <p>
-                Naša spletna aplikacija uporabniku omogoča pregledd nad razpisanimi študentskimi deli. Funkcionalnosti spletne aplikacije
-                smo razdelili na javno dostopne in tiste, ki so namenjen prijavljenim uporabnikom. Javno dostopne so:
-                <ul>
-                    <li><b>Osnovni ogled ponudb za delo</b></li>
-                    <li><b>Podroben ogled ponudb za delo</b></li>
-                    <li><b>Prijava</b></li>
-                    <li><b>Registracija</b></li>
-                </ul>
-            </p>
+      </div>
+    </div>
+  </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-2">
+            <!-- Left side column -->
+            </div>
+            <div class="col-8 custom-content">
+                <h1>Ključni primeri upoprabe naših izdelkov</h1>
+                <hr>
+                <h2 id="kazalo">Kazalo vsebine</h2>
+                <ol>
+                    <li><a href="#desktopApp">Primeri uporabe namizne aplikacije</a></li>
+                    <li><a href="#webApp">Primeri uporabe spletne aplikacije</a></li>
+                    <li><a href="#PPJ">Primeri uporabe domensko specifičnega jezika</a></li>
+                </ol>
+                <hr>
+                <div id="desktopApp">
+                    <h2>Primeri uporabe namizne aplikacije</h2>
+                    <p>
+                        Namizna aplikacija je namenjena administrativnemu uporabniku. Za takega uporabniika so značilni naslednji primeri uporabe:
+                    </p>
+                    <h3 id="generateData">Generiranje podatkov</h3>
+                    <p>
+                        Administrativni uporabnik lahko s pomočjo generatorja ustvari seznam naključno generiranjih realnih podatkov, za katere lahko
+                        tudi nastavi nekatere parametre, ki se pri generiranju upoštevajo.<br/>
+                        Ko administrator želi generirati podtke v namizni aplikaciji sledi naslednjim korakom:
+                        <ol>
+                            <li>Izbere zavihek "Generate jobs",</li>
+                            <li>nastavi željene parametre,</li>
+                            <li>pritisne gumb "Generiraj".</li>
+                        </ol>
+                        S temi koraki se mu ustvari seznam naključno generiranih podatkov, ki jih lahko nato po želji posamično ureja in pošlje na podatkovno bazo
+                        in s tem spletno aplikacijo.<br/>
+                        Izgled obrazca za generiranje podatkov je prikazan na spodnji sliki:<br/>
+                        <img src="public/GeneratorApp.png" alt="Generator"><br/>
+                    </p>
+                    <h3 id="scrapeData">Pridobivanje podatkov s spleta</h3>
+                    <p>
+                        Administrativni uporabnik lahko s pomočjo izbirnega seznama z izbiro željenih spletnih strani pridobi podatke o delih z njih.<br/>
+                        Ko administrator želi pridobiti podtke v namizni aplikaciji sledi naslednjim korakom:
+                        <ol>
+                            <li>Izbere zavihek "Jobs",</li>
+                            <li>s seznama izbere željene spletne strani s katerih želi pridobiti podatke,</li>
+                            <li>pritisne gumb "Scrape",</li>
+                            <li>pojavi se opozorilno okno, v katerem so navedeni osnovni opozotilni podatki o pridobivanju podatkov,</li>
+                            <li>Potrdi ali prekliče pridobivanje podatkov.</li>
+                        </ol>
+                        Če potrdi pridobivanje podatkov s temi koraki ustvari seznam pridobljenih podatkov, ki jih lahko nato po želji posamično ureja in pošlje na podatkovno bazo
+                        in s tem spletno aplikacijo.<br/>
+                        Izgled pogleda z izbirnim seznamom in opozorilnim oknom je prikazan na spodnji sliki:<br/>
+                        <img src="public/ScrapeApp.png" alt="Scrapers"><br/>
+                    </p>
+                    <h3 id="snedData">Urejanje podatkov</h3>
+                    <p>
+                        Podatke lahko administrativni uporabnik ureja tako pri generiranjih kot tudi pridobljeni podatkih s spleta.
+                        Pri njih lahko ureja praktično vsako polje, ki smo ga predvideli na začetku, da bi ga hraniliv podatkovni bazi.
+                        Temu smo namenili tudi naslednji pogled, do katerega administrator dostopa preko zavihka "Jobs"., tam pa pri posameznem
+                        podatku s klikom izbere ozneko, ki predstavlja svinčnik. S tem se mu odpre pogled za urejanje podatkov, ki je prikazan na spodnji sliki:<br/>
+                        <img src="public/EditApp.png" alt="Edit"><br/>
+                        Ko konča z urejanjem podatkov pa s pritiskom na gumb "Shrani", shrani spremembe v seznamu in tega lahko kasneje posreduje na podatkovno bazo.
+                    </p>
+                    <h3 id="snedData">Pošiljanje podatkov</h3>
+                    <p>
+                        Pošiljanja podatkov na podatkovno bazo pa se uporabnik loti tako, da v zavihku "Jobs", ko ima pridobljene in urejene podatke, s klikom na gumb "Pošlji" pošlje
+                        seznam podatkov v podatkovno bazo v obliki JSON datoteke, ki se preko HTTP POST protokola posreduje na spletno aplikacijo. Tam se podatki obdelajo in
+                        shranijo v podatkovno bazo, od koder so kasneje dostopni uporabnikom spletne aplikacije.
+                        Pri pošiljanju podatkov je uporabnik prav tako opozorjen na to, da ko so podatki poslani na bazo, prešnja različica baze postane nedostopa in se bo izbrisala.
+                        Prikaže se tudi opozorilo, da pošiljanje traja nekaj časa in je na vidne spremembe treba nekoliko počakati.<br/>
+                        Izgled opozorilnega okna za pošiljanje podatkov je prikazan na spodnji sliki:<br/>
+                        <img src="public/SendApp.png" alt="Send"><br/>
+                    </p>
+                </div>
+                <hr>
+                <div id="webApp">
+                    <h2>Primeri uporabe sapletne aplikacije</h2>
+                    <ul>
+                        <li><a href="#public">Primeri uporabe sapletne aplikacije - javni uporabnik</a></li>
+                        <li><a href="#loggedIn">Primeri uporabe sapletne aplikacije - prijavljeni uporabnik</a></li>
+                    </ul>
+                    <h3 id="public">Primeri uporabe sapletne aplikacije - javni uporabnik</h3>
+                    <h4 id="jobs">Pregled ponudb</h4>
+                    <p>
+                        Ko uporabnik vstopi na našo spletno stran, vidi naslednji pogled:<br/>
+                        <img src="public/FirstView.png" alt="FirstView"><br/>
+                        Pri tem ima uporabnik pregled nad vsemi razpisanimi študentskimi deli. Vsaka ponudba je predstavljena z nekaj osnovnimi podatki,
+                        ob kliku na znak '+' pri posamezni ponudbi pa se uporabniku prikaže podreben pregled ponudbe. Primer prikazuje spodnja slika:<br/>
+                        <img src="public/DetailView.png" alt="DetailView"><br/>
+                    </p>
+
+                    <h3 id="loggedIn">Primeri uporabe sapletne aplikacije - prijavljeni uporabnik</h3>
+                    <p>
+                        Vse funkcionalnosti, ki so na voljo javnemu uporabniku, so na voljo tudi prijavljenemu uporabniku.
+                    </p>
+                    <h4 id="map">Pogled z zemljevidom</h4>
+                    <p>
+                        Registriranemu uporabniku so po priajvi na voljo tudi dodatne funkcionalnosti. Ena izmed njih je ogled razpisanih del s pomočjo temljevida.
+                        Do njega uporabnik dostopa po naslednjih korakih:
+                        <ol>
+                            <li>Se priajvi v spletno aplikacijo (s klikom na zavihek "Prijava" ali "Zemljevid"),</li>
+                            <li>izbere zavihek "Zemljevid" v navigacijski vrstici,</li>
+                            <li>se prosto premika po zemljevidu in si ogleduje prosta dela glede na lokacijo,</li>
+                            <li>ko odkrije delo, ki ga zanima, s klikom nanj vstopi v podroben ogled ponudbe.</li>
+                        </ol>
+                        Pogled, ki ga ima uporabnik na voljo, ko se nahaja na zavihku "Zemljevid" je prikazan nan spodnji sliki:<br/>
+                        <img src="public/MapView.png" alt="MapView"><br/>
+                    </p>
+                    <h4 id="AIGeneration">Generiranje prošnje s pomočjo umetne inteligence ChatGPT</h4>
+                    <p>
+                        Poleg pogleda z zemljevidom, je uporabniku na voljo tudi funkcionalnost, ki mu omogoča generiranje prošnje s pomočjo umetne inteligence ChatGPT.
+                        Do nje PRIJAVLJENI uporabnik odstopa preko zavihka "Generator prošnje" ali po naslednjih korakih:
+                        <ol>
+                            <li>Se priajvi v spletno aplikacijo (s klikom na zavihek "Prijava" ali "Generator prošnje"),</li>
+                            <li>izbere zavihek "Generator prošnje" v navigacijski vrstici,</li>
+                            <li>izpolni obrazec za generiranje prošnje na levi strani vmesnika,</li>
+                            <li>pritisne gumb "SEND" in počaka na odgovor, ki se mu prikaže v desnem pogovornem oknu.</li>
+                        </ol>
+                        <img src="public/GeneratorView.png" alt="MapView"><br/>
+                    </p>
+                </div>
+                <div id="PPJ">
+                    <h2>Primer uporabe domensko specifičnega jezika</h2>
+                    <h4 id="TestCode">Prevajanje opisa mesta iz domensko specifičnega jezika v GeoJson obliko</h4>
+                    <p>
+                        Domensko specifičen jezik ki smo ga pripravili uporabniku omogoča, da na enostaven način opiše mesto, naš program, pa ta enostaven opis pretvori v obliko GeoJson.
+                        Ta tekstovni opis lahko kasneje uporabimo na spletnih straneh kot je <strong><a href="https://geojson.io/">geojson.io</a></strong>. Primer, kot ga prikazuje naslednja slika,
+                        je napisan v sintaksi našega domensko specifičnega jezika. Prikazuje nekaj osnovnih komponent, ki jih je možno uporabiti pri opisu. Uporabnik v tekstovno datoteko pripravi
+                        opis mesta, nato pa ga preko programa pretvori v GeoJson obliko.<br/>
+                        <img src="public/PPJTestProgram.png" alt="TestProgram"><br/>
+                        Ko se program izvede uporabnik lahko izpisano GeoJson besedilo kopira in prilepi v spletno aplikacijo za izrisovanje in prikazati bi se moralo nekaj
+                        podobnega, kot je prikazano na spodnji sliki.<br/>
+                        <img src="public/GeoJson.png" alt="GeoJson"><br/>
+                    </p>
+                </div>
+            </div>
+            <div class="col-2">
+            <!-- Right side column -->
+            </div>
         </div>
-    </body>
+    </div>
+
+    <footer class="custom-footer mt-4">
+    <div class="container">
+        <div class="row">
+        <div class="col">
+            <p>Skupina: Syntoxic</p>
+        </div>
+        <div class="col">
+            <p>Mentor: Izredni profesor dr. Tomaž Kosar</p>
+            </div>
+        <div class="col">
+            <p>Ime projekta: JobHive</p>
+        </div>
+        <div class="col">
+            <p>Leto: 2023/2024</p>
+        </div>
+        </div>
+    </div>
+    </footer>
+
+    <div class="back-to-top" id="backToTopBtn">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        window.addEventListener('scroll', function() {
+            const backToTopBtn = document.getElementById('backToTopBtn');
+            if (window.pageYOffset > 100) {
+            backToTopBtn.classList.add('show');
+            } else {
+            backToTopBtn.classList.remove('show');
+            }
+        });
+        document.getElementById('backToTopBtn').addEventListener('click', function() {
+            window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
 </html>

@@ -2,12 +2,179 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Syntoxic - Dokumentacija</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <style>
+            .custom-content {
+                padding: 20px;
+            }
+            .custom-footer {
+                background-color: #000;
+                color: #fff;
+                padding: 10px 0;
+                text-align: center;
+                font-size: 14px;
+            }
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.5;
+                text-align: justify;
+            }
+            h1 {
+                font-size: 26px;
+                font-weight: bold;
+            }
+            h2 {
+                font-size: 24px;
+                font-weight: bold;
+            }
+            h3 {
+                font-size: 22px;
+                font-weight: bold;
+            }
+            h4 {
+                font-size: 20px;
+                font-weight: bold;
+            }
+            a {
+                color: #0366d6;
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            strong {
+                font-weight: bold;
+            }
+            .back-to-top {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                border-radius: 50%;
+                background-color: #333;
+                color: #fff;
+                cursor: pointer;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.3s, visibility 0.3s;
+            }
+            .back-to-top:hover {
+                background-color: #555;
+            }
+            .back-to-top.show {
+                opacity: 1;
+                visibility: visible;
+            }
+        </style>
     </head>
-    <body>
-        <ul>
-            <li><a href="projektne-specifikacije.html">PROJEKTNE SPECIFIKACIJE</a></li>
-            <li><a href="navodila-za-namestitev.html">NAVODILA ZA NAMESTITEV IN PRIJAVO V SISTEM</a></li>
-            <li><a href="kljucni-primeri-uporabe.html">KLJUČNI PRIMERI UPORABE</a></li>
+<body>
+  
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/index.html">JobHive</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/index.html"><i class="fas fa-home"></i> Domov</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="projektne-specifikacije.html"><i class="fas fa-file-alt"></i> Projektne specifikacije</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="navodila-za-namestitev.html"><i class="fas fa-cogs"></i> Navodila za namestitev in prijavo v sistem</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="kljucni-primeri-uporabe.html"><i class="fas fa-lightbulb"></i> Klučni primeri uporabe</a>
+          </li>
         </ul>
-    </body>
+      </div>
+    </div>
+  </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-2">
+            <!-- Left side column -->
+            </div>
+            <div class="col-8 custom-content">
+                <h1>O nas</h1>
+                <hr>
+                <p>
+                    Smo <strong>Matevž Sladič, Rok Žerdoner in Nadiia Shpanko</strong>. Študentje 2. letnika dodiplomskega študija Računalništva in informacijskih tehnologij
+                    na Fakulteti za elektrotehniko, računalništvo in informatiko Univerze v Mariboru. Naša projektna skupina Syntoxic je nastala v sklopu
+                    študijskega projekta, ki ga kot obvezno učno vsebino opravljamo v 4. in 5. semestru študija. Naš projekt se imenuje: <strong>IZGRADNJA PLATFORME VERIŽENJA BLOKOV IN NJENA UPORABA PRI RAZVOJU DIGITALNIH DVOJČKOV</strong>,
+                    bolj konkretno pa se je naša skupina usmerila v tematiko študentskih del. Ime spletne aplikacije, ki smo si jo zamislili je <strong>JobHive</strong>.<br/><br/>
+                    V prvi polovici projekta so naš urnik sestavljali naslednji predmeti:
+                    <ol>
+                        <li>Spletno programiranje</li>
+                        <li>Principi programskih jezikov</li>
+                        <li>Projektni praktikum</li>
+                        <li>Sistemska administracija</li>
+                        <li>Prevajanje programskih jezikov</li>
+                    </ol>
+                    Pri <strong>Spletnem programiranju</strong> smo pri projektnem delu izdelali spletno aplikacijo (čelni in zaledni del) v MERN skladu.<br/>
+                    Pri <strong>Principih programskih jezikov</strong> smo za projekt izdelali namizno aplikacijo s katero lahko pridobivamo podatke za našo spletno aplikacijo
+                    s spletnih virov, ali pa poodatke generiramo naključno, pa vendar realno.<br/>
+                    Pri <strong>Projektnem praktikumu</strong> smo se naučili uporabljati orodja za načrtovanje in vodenje projekta, kot so: Jira, Git, GitHub, itd.<br/>
+                    Pri <strong>Sistemski administraciji</strong> smo se naučili uporabljati orodja za upravljanje z oddaljenim strežnikom in sistemom CI/CD: Github Workflows, Azure, Docker, BASH, python, itd.<br/>
+                    Pri <strong>Prevajanju programskih jezikov</strong> smo se naučili uporabljati orodja za prevajanje programskih jezikov, kot je ANTLR in ustvari svoj domensko specifičen programski jezik,
+                    ki našo sintakso prevede v GeoJson objekte, ki jih je možno izrisovati s pomočjo spletnih orodji.<br/><br/>
+                </p>
+            </div>
+            <div class="col-2">
+            <!-- Right side column -->
+            </div>
+        </div>
+    </div>
+
+    <footer class="custom-footer mt-4">
+    <div class="container">
+        <div class="row">
+        <div class="col">
+            <p>Skupina: Syntoxic</p>
+        </div>
+        <div class="col">
+            <p>Mentor: Izredni profesor dr. Tomaž Kosar</p>
+            </div>
+        <div class="col">
+            <p>Ime projekta: JobHive</p>
+        </div>
+        <div class="col">
+            <p>Leto: 2023/2024</p>
+        </div>
+        </div>
+    </div>
+    </footer>
+
+    <div class="back-to-top" id="backToTopBtn">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        window.addEventListener('scroll', function() {
+            const backToTopBtn = document.getElementById('backToTopBtn');
+            if (window.pageYOffset > 100) {
+            backToTopBtn.classList.add('show');
+            } else {
+            backToTopBtn.classList.remove('show');
+            }
+        });
+        document.getElementById('backToTopBtn').addEventListener('click', function() {
+            window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
 </html>
